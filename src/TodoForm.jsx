@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TodoForm = ({input, setInput, todos, setTodos}) => {
+const TodoForm = ({input, setInput, todos, setTodos, setFilterStatus}) => {
 
   const todoInputHandler = (e) => {
     setInput(e.target.value);
@@ -14,6 +14,7 @@ const TodoForm = ({input, setInput, todos, setTodos}) => {
       completed: false
     }]);
     setInput('');
+    setFilterStatus('all');
   }
 
   return (
