@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import Todo from './Todo.jsx';
 
-const TodoList = ({todos, setTodos, filterStatus, setFilterStatus}) => {
+const TodoList = ({todos, setTodos, filterStatus, setFilterStatus, searchTerm, setSearchTerm}) => {
 
   const deleteHandler = (currentTodo) => {
     setTodos(todos.filter(todo => todo.id !== currentTodo.id));
@@ -35,15 +35,29 @@ const TodoList = ({todos, setTodos, filterStatus, setFilterStatus}) => {
     }
   }
 
+  const inputSearchHandler = (e) => {
+    setSearchTerm(e.target.value);
+  }
+
+  const searchTermHandler = (todos) => {
+    if (searchTerm !== '') {
+      return todos.filter(todo => todo.text.toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0);
+    } else {
+      return todos;
+    }
+    
+  }
+
   return (
     <div className="todo-list-container">
+      <input type="text" className="search-term" placeholder="search for a task" onChange={inputSearchHandler}/>
       <select name="" id="" onChange={selectFilterHandler} value={filterStatus}>
         <option value="all">All</option>
         <option value="complete">Complete</option>
         <option value="incomplete">Incomplete</option>
       </select>
       <ul className="todo-list">
-        {filterHandler(todos)?.map(todo => (
+        {searchTermHandler(filterHandler(todos)).map(todo => (
           <Todo key={todo.id} todo={todo} deleteHandler={deleteHandler} completeHandler={completeHandler}/>
         ))}
       </ul>
