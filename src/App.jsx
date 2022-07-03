@@ -2,9 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './Navbar.jsx';
-import Home from './Home.jsx';
-import About from './About.jsx';
-import TodoApp from './TodoApp.jsx';
+import Home from './Pages/Home.jsx';
+import About from './Pages/About.jsx';
+import TodoApp from './Pages/TodoApp/TodoApp.jsx';
+import ChampionSearch from './Pages/ChampionSearch/ChampionSearch.jsx';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/todo" element={<TodoApp />} />
+        <Route path="/championsearch" element={<ChampionSearch />} />
       </Routes>
     </div>
   );

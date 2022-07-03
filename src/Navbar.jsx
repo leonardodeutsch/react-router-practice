@@ -14,6 +14,9 @@ const Navbar = () => {
         <li className="text-2xl shadow-lg px-4 py-2 bg-blue-400 hover:bg-blue-500 hover:scale-105  text-white font-medium rounded-2xl">
           <Link to="/todo">Todo App</Link>
         </li>
+        <li className="text-2xl shadow-lg px-4 py-2 bg-blue-400 hover:bg-blue-500 hover:scale-105  text-white font-medium rounded-2xl">
+          <Link to="/championsearch">Champion Search</Link>
+        </li>
       </ul>
     </nav>
   );
