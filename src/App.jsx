@@ -8,8 +8,8 @@ import TodoApp from './TodoApp.jsx';
 
 const App = () => {
   return (
-    <div className="app">
-      <h1>React Practice Apps</h1>
+    <div className="flex flex-col items-center">
+      <h1 className="text-6xl text-orange-500 m-5 font-bold">React Practice Apps</h1>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

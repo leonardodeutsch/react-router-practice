@@ -50,8 +50,8 @@ const TodoList = ({todos, setTodos, filterStatus, setFilterStatus, searchTerm, s
 
   return (
     <div className="todo-list-container">
-      <input type="text" className="search-term" placeholder="search for a task" onChange={inputSearchHandler}/>
-      <select name="" id="" onChange={selectFilterHandler} value={filterStatus}>
+      <input classtype="text" className="search-term outline outline-1 outline-slate-200 shadow-md px-2" placeholder="search for a task" onChange={inputSearchHandler}/>
+      <select className="search-term outline outline-1 outline-slate-200 shadow-md px-2" name="" id="" onChange={selectFilterHandler} value={filterStatus}>
         <option value="all">All</option>
         <option value="complete">Complete</option>
         <option value="incomplete">Incomplete</option>

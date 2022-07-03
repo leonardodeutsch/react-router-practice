@@ -18,8 +18,8 @@ const TodoForm = ({input, setInput, todos, setTodos, setFilterStatus}) => {
   }
 
   return (
-    <form className="todo-form">
-      <input type="text" placeholder="Enter your task" value={input} onChange={todoInputHandler}/>
+    <form className="m-3">
+      <input className="outline outline-1 outline-slate-200 shadow-md px-2" type="text" placeholder="Enter your task" value={input} onChange={todoInputHandler}/>
       <button type="submit" onClick={inputSubmitHandler}>Add</button>
     </form>
   );

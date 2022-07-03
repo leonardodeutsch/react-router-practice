@@ -13,7 +13,7 @@ const TodoApp = () => {
 
   return (
     <div className="todo-app">
-      <h1>My ToDo List!</h1>
+      <h2 className="m-3 font-medium text-3xl text-center">My ToDo List!</h2>
       <TodoForm input={input} setInput={setInput} todos={todos} setTodos={setTodos} setFilterStatus={setFilterStatus}/>
       <TodoList todos={todos} setTodos={setTodos} filterStatus={filterStatus} setFilterStatus={setFilterStatus} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
     </div>
