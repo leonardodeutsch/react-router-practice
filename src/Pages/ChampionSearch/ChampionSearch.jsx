@@ -9,12 +9,8 @@ const ChampionSearch = () => {
   const [termSearched, setTermSearched] = useState('');
   const [filteredChampions, setFilteredChampions] = useState([]);
 
-  const filterChampionsHandler = (champions) => {
-    setFilteredChampions(champions.filter(champion => champion.name.toLowerCase().includes(termSearched.toLowerCase())));
-  }
-
   useEffect(() => {
-    filterChampionsHandler(ChampionsData);
+    setFilteredChampions(ChampionsData.filter(champion => champion.name.toLowerCase().includes(termSearched.toLowerCase())));
   }, [termSearched]);
 
   return (

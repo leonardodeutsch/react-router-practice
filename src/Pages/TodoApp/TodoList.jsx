@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Todo from './Todo.jsx';
 
@@ -10,11 +10,8 @@ const TodoList = ({todos, setTodos, filterStatus, setFilterStatus, searchTerm, s
 
   const completeHandler = (currentTodo) => {
     setTodos(todos.map(item => {
-      if (item.id === currentTodo.id) {
-        return {...item, completed: !item.completed};
-      } else {
-        return item;
-      }
+      if (item.id !== currentTodo.id) return item;
+      return {...item, completed: !item.completed};
     }))
   }
 
@@ -40,12 +37,8 @@ const TodoList = ({todos, setTodos, filterStatus, setFilterStatus, searchTerm, s
   }
 
   const searchTermHandler = (todos) => {
-    if (searchTerm !== '') {
-      return todos.filter(todo => todo.text.toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0);
-    } else {
-      return todos;
-    }
-    
+    if (searchTerm === '') return todos;
+    return todos.filter(todo => todo.text.toLowerCase().indexOf(searchTerm.toLowerCase()) >= 0);
   }
 
   return (
