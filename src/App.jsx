@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Navbar from './Navbar.jsx';
@@ -6,6 +6,7 @@ import Home from './Pages/Home.jsx';
 import About from './Pages/About.jsx';
 import TodoApp from './Pages/TodoApp/TodoApp.jsx';
 import ChampionSearch from './Pages/ChampionSearch/ChampionSearch.jsx';
+import PersonTable from './Pages/PersonTable/PersonTable.jsx';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/todo" element={<TodoApp />} />
         <Route path="/championsearch" element={<ChampionSearch />} />
+        <Route path="/persontable" element={<PersonTable />} />
       </Routes>
     </div>
   );
